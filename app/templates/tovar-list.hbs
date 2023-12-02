@@ -1,0 +1,20 @@
+<h4>Список товаров</h4>
+<button class="btn btn-primary" {{action 'addTovar'}}>Создать</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Наименование</th>
+            <th>Описание</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each model as |tovar|}}
+            <tr {{action 'clickTovar' tovar.id}}>
+                <td>{{tovar.name}}</td>
+                <td>{{tovar.description}}</td>
+                <td>{{tovar.price}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<form style="width:50%">
+    <div class="form-group">
+        <label>Товар</label>
+        {{input class="form-control" readonly=true value=tovarName}}
+    </div>
+    <div class="form-group">
+        <label>Заказ</label>
+        <select class="form-control" {{action 'updateZakaz'}}> 
+            {{#each zakazy as |zakaz|}}
+                <option value="{{zakaz.id}}">{{zakaz.client}}-{{zakaz.id}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <button class="btn btn-primary" {{action 'save'}}>Сохранить</button>
+</form>

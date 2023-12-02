@@ -1,0 +1,16 @@
+<h4>Новый товар</h4>
+<form style="width:50%">
+  <div class="form-group">
+    <label>Наименование</label>
+    {{input class="form-control" type="text" value=model.name}}
+  </div>
+  <div class="form-group">
+    <label>Описание</label>
+    {{textarea rows="4" class="form-control" value=model.description}}
+  </div>
+  <div class="form-group">
+    <label>Цена</label>
+    {{input class="form-control" type="number" value=model.price}}
+  </div>
+  <button class="btn btn-primary" {{action 'save'}}>Сохранить</button>
+</form>

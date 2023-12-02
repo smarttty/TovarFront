@@ -1,0 +1,35 @@
+<h4>Товар {{model.name}}</h4>
+<form style="width:50%">
+  <div class="form-group">
+    <label>Наименование</label>
+    {{input class="form-control" type="text" value=model.name}}
+  </div>
+  <div class="form-group">
+    <label>Описание</label>
+    {{textarea rows="4" class="form-control" value=model.description}}
+  </div>
+  <div class="form-group">
+    <label>Цена</label>
+    {{input class="form-control" type="number" value=model.price}}
+  </div>
+  <button class="btn btn-primary" {{action 'save'}}>Сохранить</button>
+  <button class="btn btn-warning" {{action 'addTovarToZakaz'}}>Добавить товар в заказ</button>
+  <table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Клиент</th>
+        <th>Дата создания заказа</th>
+        <th>Дата отгрузки заказа</th>
+    </thead>
+     <tbody>
+        {{#each model.tovarvzakaze as |tovarvzakaze|}}
+            <tr>
+                <td>{{tovarvzakaze.zakaz.id}}</td>
+                <td>{{tovarvzakaze.zakaz.client}}</td>
+                <td>{{tovarvzakaze.zakaz.createdate}}</td>
+                <td>{{tovarvzakaze.zakaz.deliverydate}}</td>
+            </tr>
+        {{/each}}
+  </tbody>
+  </table>
+</form>

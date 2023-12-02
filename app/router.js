@@ -7,6 +7,15 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('tovar-list');
+
+  this.route('new', function() {
+    this.route('tovar');
+    this.route('tovar-v-zakaze');
+  });
+
+  this.route('tovar', {path: 'tovar/:id'});
+  this.route('tovar-v-zakaze');
 });
 
 export default Router;
